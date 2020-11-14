@@ -14,14 +14,12 @@ log.setLevel(logging.DEBUG)
 
 
 def log_function():
-
     file_handler = logging.FileHandler(filename='log/bot_debug.log', mode='a', encoding='utf-8')
     format_for_dbg = logging.Formatter(fmt='%(asctime)s - %(levelname)s - %(message)s',
                                        datefmt='%d-%m-%Y %H:%M')
     file_handler.setLevel(logging.DEBUG)
     file_handler.setFormatter(format_for_dbg)
     log.addHandler(file_handler)
-
     strm_handler = logging.StreamHandler()
     format_for_info = logging.Formatter(fmt='%(levelname)s - %(message)s')
     strm_handler.setLevel(logging.DEBUG)
