@@ -5,6 +5,8 @@ Handler -  для обработки текста пользователя. Пр
 
 import re
 
+from imagemaker import make_image
+
 name_pattern = r'^[а-яА-Я]{2,15}$'
 email_pattern = r'\b[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+\b'
 
@@ -25,3 +27,7 @@ def handle_email(text, context):
         return True
     else:
         return False
+
+
+def handle_make_image(text, context):
+    return make_image(name=context['name'], email=context['email'])
