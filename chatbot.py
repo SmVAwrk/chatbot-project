@@ -18,15 +18,15 @@ log.setLevel(logging.DEBUG)
 def log_function():
     """Функция для записи лога"""
     file_handler = logging.FileHandler(filename='log/bot_debug.log', mode='a', encoding='utf-8')
-    format_for_dbg = logging.Formatter(fmt='%(asctime)s - %(levelname)s - %(message)s',
-                                       datefmt='%d-%m-%Y %H:%M')
+    format_for_file = logging.Formatter(fmt='%(asctime)s - %(levelname)s - %(message)s',
+                                        datefmt='%d-%m-%Y %H:%M')
     file_handler.setLevel(logging.DEBUG)
-    file_handler.setFormatter(format_for_dbg)
+    file_handler.setFormatter(format_for_file)
     log.addHandler(file_handler)
     strm_handler = logging.StreamHandler()
-    format_for_info = logging.Formatter(fmt='%(levelname)s - %(message)s')
+    format_for_stream = logging.Formatter(fmt='%(levelname)s - %(message)s')
     strm_handler.setLevel(logging.DEBUG)
-    strm_handler.setFormatter(format_for_info)
+    strm_handler.setFormatter(format_for_stream)
     log.addHandler(strm_handler)
 
 

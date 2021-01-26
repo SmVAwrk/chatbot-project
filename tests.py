@@ -71,7 +71,6 @@ class ChatBotTest(unittest.TestCase):
             with patch('chatbot.vk_api.bot_longpoll.VkBotLongPoll', return_value=bot_longpoll_mock):
                 chatbot = ChatBot('a', 'b')
                 chatbot.in_action = Mock()
-                chatbot.send_image = Mock()
                 chatbot.run()
                 chatbot.in_action.assert_called()
                 self.assertEqual(chatbot.in_action.call_count, count)
